@@ -1,0 +1,30 @@
+{
+	"id": "kiloview-4kconverter",
+	"name": "Kiloview 4K NDI Converter",
+	"shortname": "Kiloview",
+	"description": "Module to control Kiloview 4K NDI Converter N50/N60/FN-50/FN-60 devices with full API integration",
+	"version": "1.0.1",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-kiloview-4kconverter.git",
+	"bugs": "https://github.com/bitfocus/companion-module-kiloview-4kconverter/issues",
+	"maintainers": [
+		{
+			"name": "Jason Hu",
+			"email": "067@kiloview.com"
+		},
+		{
+			"name": "MarkHutu",
+			"email": "31511470@qq.com"
+		}
+	],
+	"legacyIds": [],
+	"runtime": {
+		"type": "node18",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../index.js"
+	},
+	"manufacturer": "Kiloview",
+	"products": ["N50", "N60", "FN-50", "FN-60"],
+	"keywords": ["Kiloview", "4K", "Converter", "NDI", "Video", "Encoder", "Decoder"]
+}
