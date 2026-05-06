@@ -989,21 +989,13 @@ module.exports = {
 				],
 			})
 
-			const output_resolution = [
-				'auto',
-				'4096x2160',
-				'3840x2160',
-				'1920x1080',
-				'1280x720',
-			]
-
-			for (let i = 0; i < output_resolution.length; i++) { 
+			for (let i = 0; i < self.CHOICES_RESOLUTION.length; i++) { 
 				presets.push({
 					category: 'Decoder Output Resolution',
 					type: 'button',
-					name: 'Set Output Resolution: ' + output_resolution[i],
+					name: 'Set Output Resolution: ' + self.CHOICES_RESOLUTION[i].label,
 					style: {
-						text: output_resolution[i] + '\nResolution',
+						text: (i == 0 ? 'Auto' : self.CHOICES_RESOLUTION[i].label)+ '\nResolution',
 						size: '14',
 						color: colorWhite,
 						bgcolor: colorBlack,
@@ -1014,7 +1006,7 @@ module.exports = {
 								{
 									actionId: 'setOutputResolution',
 									options: {
-										resolution: output_resolution[i],
+										resolution: self.CHOICES_RESOLUTION[i].id,
 									},
 								},
 							],
@@ -1025,7 +1017,7 @@ module.exports = {
 						{
 							feedbackId: 'outputResolution',
 							options: {
-								resolution: output_resolution[i],
+								resolution: self.CHOICES_RESOLUTION[i].id,
 							},
 							style: {
 								color: colorWhite,
@@ -1036,24 +1028,13 @@ module.exports = {
 				})
 			}
 
-			const output_frame_rate = [
-				0,
-				24,
-				25,
-				29.97,
-				30,
-				50,
-				59.94,
-				60,
-			]
-
-			for (let i = 0; i < output_frame_rate.length; i++) { 
+			for (let i = 0; i < self.CHOICES_FRAME_RATE.length; i++) { 
 				presets.push({
 					category: 'Decoder Output Resolution',
 					type: 'button',
-					name: 'Set Output Frame Rate: ' +  (i == 0 ? 'Auto' : output_frame_rate[i]),
+					name: 'Set Output Frame Rate: ' +  self.CHOICES_FRAME_RATE[i].label,
 					style: {
-						text: (i == 0 ? 'Auto' : output_frame_rate[i]) + '\nFrame',
+						text: (i == 0 ? 'Auto' : self.CHOICES_FRAME_RATE[i].label) + '\nfps',
 						size: '14',
 						color: colorWhite,
 						bgcolor: colorBlack,
@@ -1064,7 +1045,7 @@ module.exports = {
 								{
 									actionId: 'setOutputFrameRate',
 									options: {
-										frame_rate: output_frame_rate[i],
+										frame_rate: self.CHOICES_FRAME_RATE[i].id,
 									},
 								},
 							],
@@ -1075,7 +1056,7 @@ module.exports = {
 						{
 							feedbackId: 'outputFrameRate',
 							options: {
-								frame_rate: output_frame_rate[i],
+								frame_rate: self.CHOICES_FRAME_RATE[i].id,
 							},
 							style: {
 								color: colorWhite,

@@ -101,13 +101,15 @@ module.exports = {
 	],
 
 	CHOICES_RESOLUTION: [
-		{ id: 'auto', label: 'Auto' },
-		{ id: 'deint', label: 'Deinterlaced (Progressive)' },
+		{ id: 'auto', label: 'Use Source Resolution' },
+		{ id: '1280x720', label: '1280x720' },
+		{ id: '1920x1080', label: '1920x1080' },
+		{ id: '3840x2160', label: '3840x2160' },
+		{ id: '4096x2160', label: '4096x2160' },
 	],
 
 	CHOICES_FRAME_RATE: [
 		{ id: 0, label: 'Use Source Frame Rate' },
-		{ id: 23.98, label: '23.98' },
 		{ id: 24, label: '24' },
 		{ id: 25, label: '25' },
 		{ id: 29.97, label: '29.97' },

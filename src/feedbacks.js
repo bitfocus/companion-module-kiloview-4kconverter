@@ -500,13 +500,7 @@ module.exports = {
 						label: 'Resolution',
 						id: 'resolution',
 						default: 'auto',
-						choices: [
-							{ id: 'auto', label: 'Auto' },
-							{ id: '4096x2160', label: '4096x2160' },
-							{ id: '3840x2160', label: '3840x2160' },
-							{ id: '1920x1080', label: '1920x1080' },
-							{ id: '1280x720', label: '1280x720' },
-						],
+						choices: self.CHOICES_RESOLUTION,
 					},
 				],
 				callback: function (feedback, bank) {
@@ -534,17 +528,7 @@ module.exports = {
 						label: 'Frame Rate',
 						id: 'frame_rate',
 						default: 0,
-						choices: [
-							{ id: 0, label: 'Auto' },
-							{ id: 23.98, label: '23.98' },
-							{ id: 24, label: '24' },
-							{ id: 25, label: '25' },
-							{ id: 29.97, label: '29.97' },
-							{ id: 30, label: '30' },
-							{ id: 50, label: '50' },
-							{ id: 59.94, label: '59.94' },
-							{ id: 60, label: '60' },
-						],
+						choices: self.CHOICES_FRAME_RATE,
 					},
 				],
 				callback: function (feedback, bank) {
