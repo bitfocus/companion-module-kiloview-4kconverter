@@ -16,6 +16,7 @@ module.exports = {
 			self.STATE.mode = self.config.mode
 
 			self.DEVICE = new kiloviewNDI(
+				this,
 				self.config.host,
 				self.config.username,
 				self.config.password,
@@ -135,10 +136,13 @@ module.exports = {
 					self.initPresets()
 				}
 				self.updateStatus(InstanceStatus.Ok)
+			}else{
+				self.log('error', 'Invalid device work mode: ' + mode.data.mode + ', please check your device or device firmware version.')
 			}
 		} catch (e) {
 			self.log('error', 'Error getting mode: ' + e.message)
 			self.updateStatus(InstanceStatus.ConnectionFailure)
+			//Don’t worry about timers cleaning, they will be closed at the beginning of function self.initConnection, and the self.initConnection will be called in self.startReconnectInterval.
 			self.startReconnectInterval()
 			return
 		}
@@ -188,7 +192,7 @@ module.exports = {
 				}
 			} else if (self.STATE.mode === 'encode') {
 				const encodeMode = await self.DEVICE.getEncode()
-				console.log("encodeMode:", encodeMode)
+				self.log('info', 'encodeMode:' + encodeMode)
 
 				self.STATE.encode_mode = encodeMode?.data?.encode_mode || 'N/A'
 
@@ -199,10 +203,10 @@ module.exports = {
 				const streamMainInfo = await self.DEVICE.getStreamParams('main', 'ndi-hx')
 				const streamFullInfo = await self.DEVICE.getStreamParams('main_full', 'ndi-full')
 				const bitrates = await self.DEVICE.getEncodeBitrates()
-				//console.log("bitrates:", bitrates?.data)
+				//self.log('info', 'bitrates:' + bitrates?.data)
 
 				const signal = await self.DEVICE.getEncodeSignal()
-				//console.log("signal:", signal?.data?.signal)
+				//self.log('info', 'signal' + signal?.data?.signal)
 				self.STATE.info = {
 					data: {
 						main: mainInfo,
