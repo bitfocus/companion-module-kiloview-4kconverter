@@ -1,6 +1,6 @@
 {
 	"name": "kiloview-4kconverter",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -10,12 +10,11 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@companion-module/base": "^1.12.1",
-		"sharp": "^0.34.4"
+		"@companion-module/base": "^1.12.1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/bitfocus/companion-module-kiloview-ndi.git"
+		"url": "git+https://github.com/bitfocus/companion-module-kiloview-4kconverter.git"
 	},
 	"devDependencies": {
 		"@companion-module/tools": "^2.6.1",
