@@ -40,8 +40,8 @@ This module will allow you to control Kiloview 4K NDI Converter devices (N50/N60
 - **Select NDI Source** — Select from discovered NDI sources
 - **Refresh NDI Sources** — Manually refresh the list of available NDI sources
 - **Output with Blank** — Output blank video (Preset 0)
-- **Set Output Resolution** — Set output resolution (Auto, Deinterlaced/Progressive)
-- **Set Output Frame Rate** — Set output frame rate (Auto, 23.98-60 fps)
+- **Set Output Resolution** — Set output resolution (Auto, 1280x720, 1920x1080, 3840x2160, 4096x2160)
+- **Set Output Frame Rate** — Set output frame rate (Auto, 24-60 fps)
 - **Add NDI Preset** — Add a new NDI preset (ID 1-9) with Name, Group, Channel Name
 - **Add Net Stream Preset** — Add a new net stream preset (ID 1-9) with Name, Protocol, URL
 - **Remove Preset** — Remove an existing preset by ID (1-9)
