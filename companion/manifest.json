@@ -3,7 +3,7 @@
 	"name": "Kiloview 4K NDI Converter",
 	"shortname": "Kiloview",
 	"description": "Module to control Kiloview 4K NDI Converter N50/N60/FN-50/FN-60 devices with full API integration",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-kiloview-4kconverter.git",
 	"bugs": "https://github.com/bitfocus/companion-module-kiloview-4kconverter/issues",
