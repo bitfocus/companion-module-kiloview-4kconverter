@@ -14,7 +14,14 @@ class kiloviewNDI {
 		token: '',
 	}
 
-	constructor(ip, username, password, protocol = 'https', port = 443, timeout = 2000) {
+	owner = null
+
+	log(level, message) {
+		this.owner.log(level, message)
+	}
+
+	constructor(owner, ip, username, password, protocol = 'https', port = 443, timeout = 2000) {
+		this.owner = owner
 		this.connection_info = {
 			ip,
 			username,
@@ -177,7 +184,7 @@ class kiloviewNDI {
 	}
 
 	async authPost(url, data = {}) {
-		console.log('authPost:' + url)
+		//this.log('debug', 'authPost:' + url)
 		if (!this.authorized) {
 			await this.authorize()
 		}
@@ -362,7 +369,7 @@ class kiloviewNDI {
 
 	async setOutputResolution(info, resolution) {
 		if(info == null){
-			console.log('setOutputResolution info is null')
+			this.log('error', 'setOutputResolution info is null')
 			return {result: 'failed'}
 		}
 
@@ -372,7 +379,7 @@ class kiloviewNDI {
 
 	async setOutputFrameRate(info, frame_rate) {
 		if(info == null){
-			console.log('setOutputFrameRate info is null')
+			this.log('error', 'setOutputFrameRate info is null')
 			return {result: 'failed'}
 		}
 
