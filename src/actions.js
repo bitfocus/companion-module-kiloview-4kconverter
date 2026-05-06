@@ -377,7 +377,7 @@ module.exports = {
 						if(address && address.length > 0){
 							address_check_ok = true
 						}
-						multicast_addr = self.STATE.info?.data?.multi_protocol_streams?.rtsp?.multicast_address || ''
+						let multicast_addr = self.STATE.info?.data?.multi_protocol_streams?.rtsp?.multicast_address || ''
 						if(self.STATE.info?.data?.multi_protocol_streams?.rtsp?.multicast_enable === true &&
 							multicast_addr && multicast_addr.length > 0){
 							address_check_ok = true
@@ -385,7 +385,7 @@ module.exports = {
 					}
 
 					if(!address_check_ok){
-						console.log('ERROR: ' + options.protocol + ' Config is invalid, please open the device web interface to check the config')
+						self.log('error', options.protocol + ' Config is invalid, please open the device web interface to check the config')
 						return
 					}
 
