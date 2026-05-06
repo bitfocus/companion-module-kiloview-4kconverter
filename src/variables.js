@@ -30,7 +30,7 @@ module.exports = {
 		variables.push({ variableId: 'hostname', name: 'Device Hostname' })
 		variables.push({ variableId: 'product', name: 'Product Type' })
 		variables.push({ variableId: 'serial_number', name: 'Device Serial Number' })
-		variables.push({ variableId: 'fireware_version', name: 'Fireware Version' })
+		variables.push({ variableId: 'firmware_version', name: 'Firmware Version' })
 
 		variables.push({ variableId: 'resolution', name: 'Resolution' })
 		variables.push({ variableId: 'audio_format', name: 'Audio Format' })
@@ -123,7 +123,7 @@ module.exports = {
 			variableObj.hostname = self.STATE.hostname || ''
 			variableObj.product = self.STATE.product || ''
 			variableObj.serial_number = self.STATE.serial_number || ''
-			variableObj.fireware_version = self.STATE.fireware_version || ''
+			variableObj.firmware_version = self.STATE.firmware_version || ''
 
 		
 			

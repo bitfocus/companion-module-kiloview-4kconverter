@@ -157,7 +157,7 @@ module.exports = {
 			self.STATE.server_info = server_info
 			self.STATE.product = server_info?.data?.version?.product || ''
 			self.STATE.serial_number = server_info?.data?.version?.serialNumber || ''
-			self.STATE.fireware_version = server_info?.data?.version?.softwareVersion || ''
+			self.STATE.firmware_version = server_info?.data?.version?.softwareVersion || ''
 		} catch (e) {
 			if (self.config.verbose) {
 				self.log('debug', 'Error getting server info: ' + e.message)

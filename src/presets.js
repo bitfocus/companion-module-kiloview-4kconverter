@@ -208,7 +208,7 @@ module.exports = {
 				type: 'button',
 				name: 'Device Fireware Version',
 				style: {
-					text: 'Fireware Version:\n$(kiloview:fireware_version)',
+					text: 'Firmware Version:\n$(kiloview:firmware_version)',
 					size: 'auto',
 					color: colorWhite,
 					bgcolor: colorBlack,
@@ -926,8 +926,8 @@ module.exports = {
 			})
 
 			for (let i = 1; i <= 10; i++) {
-				display_name = (i == 10 ? ' Blank' : i)
-				sytle_text = (i == 10 ? 'Blank' : `P${display_name}\n$(kiloview:preset${i}_name)`)
+				let display_name = (i == 10 ? ' Blank' : i)
+				let sytle_text = (i == 10 ? 'Blank' : `P${display_name}\n$(kiloview:preset${i}_name)`)
 				presets.push({
 					category: 'Decoder',
 					type: 'button',
