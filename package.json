@@ -10,14 +10,14 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@companion-module/base": "^1.12.1"
+		"@companion-module/base": "^1.15.1"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/bitfocus/companion-module-kiloview-4kconverter.git"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.8.0",
+		"@companion-module/tools": "^2.9.1",
 		"prettier": "^3.3.2"
 	},
 	"prettier": "@companion-module/tools/.prettierrc.json",
